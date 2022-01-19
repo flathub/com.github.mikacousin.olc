@@ -1,7 +1,7 @@
 {
   "app-id": "com.github.mikacousin.olc",
   "runtime": "org.gnome.Sdk",
-  "runtime-version": "3.36",
+  "runtime-version": "40",
   "sdk": "org.gnome.Sdk",
   "command": "olc",
   "finish-args": [
@@ -23,29 +23,15 @@
   },
   "modules": [
     {
-      "name": "cython",
-      "buildsystem": "simple",
-      "build-commands": [
-        "pip3 install --prefix=/app Cython-0.29.21.tar.gz"
-      ],
-      "sources": [
-        {
-          "type": "file",
-          "url": "https://files.pythonhosted.org/packages/6c/9f/f501ba9d178aeb1f5bf7da1ad5619b207c90ac235d9859961c11829d0160/Cython-0.29.21.tar.gz",
-          "sha256": "e57acb89bd55943c8d8bf813763d20b9099cc7165c0f16b707631a7654be9cad"
-        }
-      ]
-    },
-    {
       "name": "psutil",
       "buildsystem": "simple",
       "build-commands": [
-        "pip3 install --prefix=/app psutil-5.7.2.tar.gz"
+        "pip3 install --prefix=/app psutil-5.9.0.tar.gz"
       ],
       "sources": [{
         "type": "file",
-        "url": "https://files.pythonhosted.org/packages/aa/3e/d18f2c04cf2b528e18515999b0c8e698c136db78f62df34eee89cee205f1/psutil-5.7.2.tar.gz",
-        "sha256": "90990af1c3c67195c44c9a889184f84f5b2320dce3ee3acbd054e3ba0b4a7beb"
+        "url": "https://files.pythonhosted.org/packages/47/b6/ea8a7728f096a597f0032564e8013b705aa992a0990becd773dcc4d7b4a7/psutil-5.9.0.tar.gz",
+        "sha256": "869842dbd66bb80c3217158e629d6fceaecc3a3166d3d1faee515b05dd26ca25"
       }]
     },
     {
@@ -83,8 +69,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/protocolbuffers/protobuf/releases/download/v3.1.0/protobuf-cpp-3.1.0.tar.gz",
-          "sha256": "51ceea9957c875bdedeb1f64396b5b0f3864fe830eed6a2d9c066448373ea2d6"
+          "url": "https://github.com/protocolbuffers/protobuf/releases/download/v3.19.3/protobuf-cpp-3.19.3.tar.gz",
+          "sha256": "f0cc6ae9119d4891d72bc72d44ae73308d6e2319e2ce96c10c22d2508c55c922"
         }
       ]
     },
@@ -92,13 +78,13 @@
       "name": "python-google-protobuf",
       "buildsystem": "simple",
       "build-commands": [
-        "pip3 install --prefix=/app protobuf-3.1.0.post1-py2.py3-none-any.whl"
+        "pip3 install --prefix=/app protobuf-3.19.3-py2.py3-none-any.whl"
       ],
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/a5/bb/11821bdc46cb9aad8e18618715e5e93eef44abb642ed862c4b080c474183/protobuf-3.1.0.post1-py2.py3-none-any.whl",
-          "sha256": "42315e73409eaefdcc11e216695ff21f87dc483ad0595c57999baddf7f841180"
+          "url": "https://files.pythonhosted.org/packages/dc/a9/fdc31f2c7917d5a1e18f4ca2f955706dfdcaaba8fb0baa48becfc0b68f22/protobuf-3.19.3-py2.py3-none-any.whl",
+          "sha256": "f6d4b5b7595a57e69eb7314c67bef4a3c745b4caf91accaf72913d8e0635111b"
         }
       ]
     },
@@ -107,8 +93,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-0.9.70.tar.gz",
-          "sha256": "90d0a3d396f96f9bc41eb0f7e8187796049285fabef82604acd4879590977307"
+          "url": "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-0.9.75.tar.gz",
+          "sha256": "9278907a6f571b391aab9644fd646a5108ed97311ec66f6359cebbedb0a4e3bb"
         }
       ]
     },
@@ -129,8 +115,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/OpenLightingProject/ola/releases/download/0.10.7/ola-0.10.7.tar.gz",
-          "sha256": "8a65242d95e0622a3553df498e0db323a13e99eeb1accc63a8a2ca8913ab31a0"
+          "url": "https://github.com/OpenLightingProject/ola/releases/download/0.10.8/ola-0.10.8.tar.gz",
+          "sha256": "102aa3114562a2a71dbf7f77d2a0fb9fc47acc35d6248a70b6e831365ca71b13"
         },
         {
           "type": "script",
@@ -150,8 +136,24 @@
         {
           "type": "git",
           "url": "https://github.com/thestk/rtmidi.git",
-          "tag": "4.0.0",
-          "commit": "cc887191c3b4cb6697aeba5536d9f4eb423090aa"
+          "tag": "5.0.0",
+          "commit": "84a99422a3faf1ab417fe71c0903a48debb9376a"
+        }
+      ]
+    },
+    {
+      "name": "jack",
+      "buildsystem": "simple",
+      "build-commands": [
+        "python3 waf configure --prefix=/app",
+        "python3 waf build",
+        "python3 waf install"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/jackaudio/jack2/archive/refs/tags/v1.9.20.tar.gz",
+          "sha256": "915ad2900992159bdb729b9fc4ea134b962ce32b2df0b384fee40a2c5808835d"
         }
       ]
     },
@@ -159,13 +161,13 @@
       "name": "python-rtmidi",
       "buildsystem": "simple",
       "build-commands": [
-        "pip3 install --prefix=/app python-rtmidi-1.4.1.tar.gz"
+        "pip3 install --prefix=/app python-rtmidi-1.4.9.tar.gz"
       ],
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/e1/e8/b40f0bfc49618a95a61d16d67528ab35d0303acd761412c4e39e8a3325a9/python-rtmidi-1.4.1.tar.gz",
-          "sha256": "07bfecdbd6f1abe11f57f4448cf1da29dc199daee16ee7e5a8db092a2d1c1e2c"
+          "url": "https://files.pythonhosted.org/packages/92/bf/749468bc43f85ec77f37154327360ba82e7d0ae622341eab44a6d75751c3/python-rtmidi-1.4.9.tar.gz",
+          "sha256": "bfeb4ed99d0cccf6fa2837566907652ded7adc1c03b69f2160c9de4082301302"
         }
       ]
     },
@@ -173,12 +175,12 @@
       "name": "mido",
       "buildsystem": "simple",
       "build-commands": [
-        "pip3 install --prefix=/app mido-1.2.9-py2.py3-none-any.whl"
+        "pip3 install --prefix=/app mido-1.2.10-py2.py3-none-any.whl"
       ],
       "sources": [{
         "type": "file",
-        "url": "https://files.pythonhosted.org/packages/20/0a/81beb587b1ae832ea6a1901dc7c6faa380e8dd154e0a862f0a9f3d2afab9/mido-1.2.9-py2.py3-none-any.whl",
-        "sha256": "fc6364efa028c8405166f63e6a83cbc6c17aaeac2c28680abe64ae48703a89dd"
+        "url": "https://files.pythonhosted.org/packages/b5/6d/e18a5b59ff086e1cd61d7fbf943d86c5f593a4e68bfc60215ab74210b22b/mido-1.2.10-py2.py3-none-any.whl",
+        "sha256": "0e618232063e0a220249da4961563c7636fea00096cfb3e2b87a4231f0ac1a9e"
       }]
     },
     {
@@ -189,8 +191,8 @@
         {
           "type": "git",
           "url": "https://github.com/mikacousin/olc.git",
-          "tag": "0.3.2.alpha",
-          "commit": "0296840f86629d367fe429d4a27bf25a1e2bb1b1"
+          "tag": "0.5.beta",
+          "commit": "8e2671d988892993325a67ce0a77d7d885c03163"
         }
       ]
     }
