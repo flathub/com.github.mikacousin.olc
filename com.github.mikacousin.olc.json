@@ -9,7 +9,7 @@
     "--share=network",
     "--socket=fallback-x11",
     "--socket=wayland",
-    "--filesystem=home",
+    "--persist=.ola",
     "--device=all"
   ],
   "cleanup": [
@@ -193,8 +193,8 @@
         {
           "type": "git",
           "url": "https://github.com/mikacousin/olc.git",
-          "tag": "0.5.beta",
-          "commit": "e89a44153a6ee30416ae4e7965af8de982825912"
+          "tag": "0.5.1.beta",
+          "commit": "a00c1d3c0352cd258baaa9333a72dd97d6a849fa"
         }
       ]
     }
