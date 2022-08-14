@@ -1,7 +1,7 @@
 {
   "app-id": "com.github.mikacousin.olc",
   "runtime": "org.gnome.Sdk",
-  "runtime-version": "40",
+  "runtime-version": "42",
   "sdk": "org.gnome.Sdk",
   "command": "olc",
   "finish-args": [
@@ -23,16 +23,18 @@
   },
   "modules": [
     {
-      "name": "psutil",
+      "name": "python3-psutil",
       "buildsystem": "simple",
       "build-commands": [
-        "pip3 install --prefix=/app psutil-5.9.0.tar.gz"
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"psutil\" --no-build-isolation"
       ],
-      "sources": [{
-        "type": "file",
-        "url": "https://files.pythonhosted.org/packages/47/b6/ea8a7728f096a597f0032564e8013b705aa992a0990becd773dcc4d7b4a7/psutil-5.9.0.tar.gz",
-        "sha256": "869842dbd66bb80c3217158e629d6fceaecc3a3166d3d1faee515b05dd26ca25"
-      }]
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/d6/de/0999ea2562b96d7165812606b18f7169307b60cd378bc29cf3673322c7e9/psutil-5.9.1.tar.gz",
+          "sha256": "57f1819b5d9e95cdfb0c881a8a5b7d542ed0b7c522d575706a80bedc848c8954"
+        }
+      ]
     },
     {
       "name": "liblo",
@@ -50,16 +52,18 @@
       ]
     },
     {
-      "name": "python-liblo",
+      "name": "python3-pyliblo",
       "buildsystem": "simple",
       "build-commands": [
-        "pip3 install --prefix=/app pyliblo-0.10.0.tar.gz"
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyliblo\" --no-build-isolation"
       ],
-      "sources": [{
-        "type": "file",
-        "url": "https://files.pythonhosted.org/packages/c0/da/4b8052ab5aa07952d7fe7b068d737a042e76373573eadd340f7550eddea9/pyliblo-0.10.0.tar.gz",
-        "sha256": "fc67f1950b827272b00f9f0dc4ed7113c0ccef0c1c09e9976dead40ebbf1798f"
-      }]
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/c0/da/4b8052ab5aa07952d7fe7b068d737a042e76373573eadd340f7550eddea9/pyliblo-0.10.0.tar.gz",
+          "sha256": "fc67f1950b827272b00f9f0dc4ed7113c0ccef0c1c09e9976dead40ebbf1798f"
+        }
+      ]
     },
     {
       "name": "cpp-google-protobuf",
@@ -69,22 +73,22 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/protocolbuffers/protobuf/releases/download/v3.19.3/protobuf-cpp-3.19.3.tar.gz",
-          "sha256": "f0cc6ae9119d4891d72bc72d44ae73308d6e2319e2ce96c10c22d2508c55c922"
+          "url": "https://github.com/protocolbuffers/protobuf/releases/download/v21.5/protobuf-cpp-3.21.5.tar.gz",
+          "sha256": "58c8a18b4ec22655535c493155c5465a8903e8249094ceead87e00763bdbc44f"
         }
       ]
     },
     {
-      "name": "python-google-protobuf",
+      "name": "python3-protobuf",
       "buildsystem": "simple",
       "build-commands": [
-        "pip3 install --prefix=/app protobuf-3.19.3-py2.py3-none-any.whl"
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"protobuf\" --no-build-isolation"
       ],
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/dc/a9/fdc31f2c7917d5a1e18f4ca2f955706dfdcaaba8fb0baa48becfc0b68f22/protobuf-3.19.3-py2.py3-none-any.whl",
-          "sha256": "f6d4b5b7595a57e69eb7314c67bef4a3c745b4caf91accaf72913d8e0635111b"
+          "url": "https://files.pythonhosted.org/packages/51/90/d2bf065b8753951e5fdba822af358edae6dac055b81f018e1ec74d8ba71e/protobuf-4.21.5.tar.gz",
+          "sha256": "eb1106e87e095628e96884a877a51cdb90087106ee693925ec0a300468a9be3a"
         }
       ]
     },
@@ -100,11 +104,6 @@
     },
     {
       "name": "ola",
-      "build-options": {
-        "env": {
-          "PYTHON": "python3"
-        }
-      },
       "config-opts": [
         "--disable-unittests",
         "--disable-examples",
@@ -151,17 +150,18 @@
       ],
       "sources": [
         {
-          "type": "archive",
-          "url": "https://github.com/jackaudio/jack2/archive/refs/tags/v1.9.20.tar.gz",
-          "sha256": "915ad2900992159bdb729b9fc4ea134b962ce32b2df0b384fee40a2c5808835d"
+          "type": "git",
+          "url": "https://github.com/jackaudio/jack2.git",
+          "tag": "v1.9.21",
+          "commit": "6b3c96d8aeef8aeb4b20f3aa647e6d01b4000ff8"
         }
       ]
     },
     {
-      "name": "python-rtmidi",
+      "name": "python3-python-rtmidi",
       "buildsystem": "simple",
       "build-commands": [
-        "pip3 install --prefix=/app python-rtmidi-1.4.9.tar.gz"
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"python-rtmidi\" --no-build-isolation"
       ],
       "sources": [
         {
@@ -172,16 +172,18 @@
       ]
     },
     {
-      "name": "mido",
+      "name": "python3-mido",
       "buildsystem": "simple",
       "build-commands": [
-        "pip3 install --prefix=/app mido-1.2.10-py2.py3-none-any.whl"
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"mido\" --no-build-isolation"
       ],
-      "sources": [{
-        "type": "file",
-        "url": "https://files.pythonhosted.org/packages/b5/6d/e18a5b59ff086e1cd61d7fbf943d86c5f593a4e68bfc60215ab74210b22b/mido-1.2.10-py2.py3-none-any.whl",
-        "sha256": "0e618232063e0a220249da4961563c7636fea00096cfb3e2b87a4231f0ac1a9e"
-      }]
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/b5/6d/e18a5b59ff086e1cd61d7fbf943d86c5f593a4e68bfc60215ab74210b22b/mido-1.2.10-py2.py3-none-any.whl",
+          "sha256": "0e618232063e0a220249da4961563c7636fea00096cfb3e2b87a4231f0ac1a9e"
+        }
+      ]
     },
     {
       "name": "olc",
