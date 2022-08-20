@@ -109,13 +109,15 @@
         "--disable-examples",
         "--disable-osc",
         "--enable-http",
-        "--enable-python-libs"
+        "--enable-python-libs",
+        "--with-python_prefix=/app",
+        "--with-python_exec_prefix=/app"
       ],
       "sources": [
         {
-          "type": "archive",
-          "url": "https://github.com/OpenLightingProject/ola/releases/download/0.10.8/ola-0.10.8.tar.gz",
-          "sha256": "102aa3114562a2a71dbf7f77d2a0fb9fc47acc35d6248a70b6e831365ca71b13"
+          "type": "git",
+          "url": "https://github.com/OpenLightingProject/ola.git",
+          "commit": "30d29887cb6dc48978b579e7a6de51f189b0fe29"
         },
         {
           "type": "script",
