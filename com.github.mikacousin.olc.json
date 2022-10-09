@@ -115,8 +115,8 @@
       "sources": [
         {
           "type": "git",
-          "url": "https://github.com/OpenLightingProject/ola.git",
-          "commit": "30d29887cb6dc48978b579e7a6de51f189b0fe29"
+          "url": "https://github.com/mikacousin/ola.git",
+          "commit": "7aba8695b69086e5d08cfec8de0c8889bc3b8da2"
         },
         {
           "type": "script",
