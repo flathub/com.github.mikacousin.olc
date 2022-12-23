@@ -194,8 +194,8 @@
         {
           "type": "git",
           "url": "https://github.com/mikacousin/olc.git",
-          "tag": "0.6.beta",
-          "commit": "216c0c254b4df73a68049b3c046c4001a6c7346f"
+          "tag": "0.7.beta",
+          "commit": "ad8321b43ce9cb5b2ca1dc48dce75a054cd6a107"
         }
       ]
     }
