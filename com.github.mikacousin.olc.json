@@ -1,7 +1,7 @@
 {
   "app-id": "com.github.mikacousin.olc",
   "runtime": "org.gnome.Sdk",
-  "runtime-version": "42",
+  "runtime-version": "44",
   "sdk": "org.gnome.Sdk",
   "command": "olc",
   "finish-args": [
