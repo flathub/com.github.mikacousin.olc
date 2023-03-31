@@ -148,7 +148,8 @@
         {
           "type": "git",
           "url": "https://github.com/SpotlightKid/python-rtmidi",
-          "branch": "feat/modernize"
+          "branch": "feat/modernize",
+          "commit": "b694d1919eab003c58ba21bb50dab5d8825c33bb"
         }
       ]
     },
