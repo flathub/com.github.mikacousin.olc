@@ -1,7 +1,7 @@
 {
   "app-id": "com.github.mikacousin.olc",
   "runtime": "org.gnome.Sdk",
-  "runtime-version": "42",
+  "runtime-version": "44",
   "sdk": "org.gnome.Sdk",
   "command": "olc",
   "finish-args": [
@@ -30,8 +30,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/d6/de/0999ea2562b96d7165812606b18f7169307b60cd378bc29cf3673322c7e9/psutil-5.9.1.tar.gz",
-          "sha256": "57f1819b5d9e95cdfb0c881a8a5b7d542ed0b7c522d575706a80bedc848c8954"
+          "url": "https://files.pythonhosted.org/packages/3d/7d/d05864a69e452f003c0d77e728e155a89a2a26b09e64860ddd70ad64fb26/psutil-5.9.4.tar.gz",
+          "sha256": "3d7f9739eb435d4b1338944abe23f49584bde5395f27487d2ee25ad9a8774a62"
         }
       ]
     },
@@ -72,8 +72,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/protocolbuffers/protobuf/releases/download/v21.5/protobuf-cpp-3.21.5.tar.gz",
-          "sha256": "58c8a18b4ec22655535c493155c5465a8903e8249094ceead87e00763bdbc44f"
+          "url": "https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protobuf-cpp-3.21.12.tar.gz",
+          "sha256": "4eab9b524aa5913c6fffb20b2a8abf5ef7f95a80bc0701f3a6dbb4c607f73460"
         }
       ]
     },
@@ -86,8 +86,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/51/90/d2bf065b8753951e5fdba822af358edae6dac055b81f018e1ec74d8ba71e/protobuf-4.21.5.tar.gz",
-          "sha256": "eb1106e87e095628e96884a877a51cdb90087106ee693925ec0a300468a9be3a"
+          "url": "https://files.pythonhosted.org/packages/ba/dd/f8a01b146bf45ac12a829bbc599e6590aa6a6849ace7d28c42d77041d6ab/protobuf-4.21.12.tar.gz",
+          "sha256": "7cd532c4566d0e6feafecc1059d04c7915aec8e182d1cf7adee8b24ef1e2e6ab"
         }
       ]
     },
@@ -96,8 +96,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-0.9.75.tar.gz",
-          "sha256": "9278907a6f571b391aab9644fd646a5108ed97311ec66f6359cebbedb0a4e3bb"
+          "url": "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-0.9.76.tar.gz",
+          "sha256": "f0b1547b5a42a6c0f724e8e1c1cb5ce9c4c35fb495e7d780b9930d35011ceb4c"
         }
       ]
     },
@@ -114,9 +114,9 @@
       ],
       "sources": [
         {
-          "type": "git",
-          "url": "https://github.com/mikacousin/ola.git",
-          "commit": "7aba8695b69086e5d08cfec8de0c8889bc3b8da2"
+          "type": "archive",
+          "url": "https://github.com/OpenLightingProject/ola/releases/download/0.10.9/ola-0.10.9.tar.gz",
+          "sha256": "44073698c147fe641507398253c2e52ff8dc7eac8606cbf286c29f37939a4ebf"
         },
         {
           "type": "script",
@@ -142,33 +142,14 @@
       ]
     },
     {
-      "name": "jack",
-      "buildsystem": "simple",
-      "build-commands": [
-        "python3 waf configure --prefix=/app",
-        "python3 waf build",
-        "python3 waf install"
-      ],
+      "name": "python3-python-rtmidi",
+      "buildsystem": "meson",
       "sources": [
         {
           "type": "git",
-          "url": "https://github.com/jackaudio/jack2.git",
-          "tag": "v1.9.21",
-          "commit": "6b3c96d8aeef8aeb4b20f3aa647e6d01b4000ff8"
-        }
-      ]
-    },
-    {
-      "name": "python3-python-rtmidi",
-      "buildsystem": "simple",
-      "build-commands": [
-        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"python-rtmidi\" --no-build-isolation"
-      ],
-      "sources": [
-        {
-          "type": "file",
-          "url": "https://files.pythonhosted.org/packages/92/bf/749468bc43f85ec77f37154327360ba82e7d0ae622341eab44a6d75751c3/python-rtmidi-1.4.9.tar.gz",
-          "sha256": "bfeb4ed99d0cccf6fa2837566907652ded7adc1c03b69f2160c9de4082301302"
+          "url": "https://github.com/SpotlightKid/python-rtmidi",
+          "branch": "feat/modernize",
+          "commit": "b694d1919eab003c58ba21bb50dab5d8825c33bb"
         }
       ]
     },
@@ -194,8 +175,7 @@
         {
           "type": "git",
           "url": "https://github.com/mikacousin/olc.git",
-          "tag": "0.7.1.beta",
-          "commit": "9a7ec94f994171adbc4fb36018eae977970b843e"
+          "tag": "0.7.2.beta"
         }
       ]
     }
