@@ -22,20 +22,6 @@
   },
   "modules": [
     {
-      "name": "python3-psutil",
-      "buildsystem": "simple",
-      "build-commands": [
-        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"psutil\" --no-build-isolation"
-      ],
-      "sources": [
-        {
-          "type": "file",
-          "url": "https://files.pythonhosted.org/packages/3d/7d/d05864a69e452f003c0d77e728e155a89a2a26b09e64860ddd70ad64fb26/psutil-5.9.4.tar.gz",
-          "sha256": "3d7f9739eb435d4b1338944abe23f49584bde5395f27487d2ee25ad9a8774a62"
-        }
-      ]
-    },
-    {
       "name": "liblo",
       "config-opts": [
         "--disable-examples",
@@ -86,8 +72,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/ba/dd/f8a01b146bf45ac12a829bbc599e6590aa6a6849ace7d28c42d77041d6ab/protobuf-4.21.12.tar.gz",
-          "sha256": "7cd532c4566d0e6feafecc1059d04c7915aec8e182d1cf7adee8b24ef1e2e6ab"
+          "url": "https://files.pythonhosted.org/packages/7f/2e/49d5a453d68febffbb602ad985b7432377e36bdf47198c6ab05021b33016/protobuf-4.23.2.tar.gz",
+          "sha256": "20874e7ca4436f683b64ebdbee2129a5a2c301579a67d1a7dda2cdf62fb7f5f7"
         }
       ]
     },
@@ -143,13 +129,15 @@
     },
     {
       "name": "python3-python-rtmidi",
-      "buildsystem": "meson",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"python-rtmidi\" --no-build-isolation"
+      ],
       "sources": [
         {
-          "type": "git",
-          "url": "https://github.com/SpotlightKid/python-rtmidi",
-          "branch": "feat/modernize",
-          "commit": "b694d1919eab003c58ba21bb50dab5d8825c33bb"
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/5f/76/ad7fbbcfcd57c3cf824fa9ad43c42c36a74eee7cea525df45e3eb1dd3fbb/python_rtmidi-1.5.0-cp310-cp310-manylinux_2_28_x86_64.whl",
+          "sha256": "659558070e15dca97660341919f95ae0f6e86c5383af6789813d9b16ba51863c"
         }
       ]
     },
