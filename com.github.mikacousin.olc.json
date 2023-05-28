@@ -129,15 +129,12 @@
     },
     {
       "name": "python3-python-rtmidi",
-      "buildsystem": "simple",
-      "build-commands": [
-        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"python-rtmidi\" --no-build-isolation"
-      ],
+      "buildsystem": "meson",
       "sources": [
         {
-          "type": "file",
-          "url": "https://files.pythonhosted.org/packages/5f/76/ad7fbbcfcd57c3cf824fa9ad43c42c36a74eee7cea525df45e3eb1dd3fbb/python_rtmidi-1.5.0-cp310-cp310-manylinux_2_28_x86_64.whl",
-          "sha256": "659558070e15dca97660341919f95ae0f6e86c5383af6789813d9b16ba51863c"
+          "type": "archive",
+          "url": "https://files.pythonhosted.org/packages/b6/94/9f57c5459d0cda4032967fd551442d3b953094a4c6514d57d2cf0ad2f44d/python-rtmidi-1.5.0.tar.gz",
+          "sha256": "92e619f4343f262daed7874236c910a6a60d10481ed7c4db86c7cba80f35e9e7"
         }
       ]
     },
