@@ -121,19 +121,27 @@
         {
           "type": "git",
           "url": "https://github.com/thestk/rtmidi.git",
-          "tag": "5.0.0",
-          "commit": "84a99422a3faf1ab417fe71c0903a48debb9376a"
+          "tag": "6.0.0",
+          "commit": "1e5b49925aa60065db52de44c366d446a902547b"
         }
       ]
     },
     {
       "name": "python3-python-rtmidi",
-      "buildsystem": "meson",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"python-rtmidi\" --no-build-isolation"
+      ],
       "sources": [
         {
-          "type": "archive",
-          "url": "https://files.pythonhosted.org/packages/b6/94/9f57c5459d0cda4032967fd551442d3b953094a4c6514d57d2cf0ad2f44d/python-rtmidi-1.5.0.tar.gz",
-          "sha256": "92e619f4343f262daed7874236c910a6a60d10481ed7c4db86c7cba80f35e9e7"
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/a0/79/1ddb4fb1bdb1a8b8bd62007ca4980344a53b7f29633a7bca1088eed964ce/python_rtmidi-1.5.8-cp311-cp311-manylinux_2_28_x86_64.whl",
+          "sha256": "46bbf32c8a4bf6c8f0df1c02a68689d0757f13cb7a69f27ccbbed3d7b2365918"
+        },
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/53/5e/b866491545135c699bfbed62f54b93c4d6587afc2bba6e2cbbe898570c32/python_rtmidi-1.5.8-cp311-cp311-manylinux_2_28_aarch64.whl",
+          "sha256": "271d625c489fffb39b3edc5aba67f7c8e29a04a0a0f056ce19e5a888a08b4c59"
         }
       ]
     },
