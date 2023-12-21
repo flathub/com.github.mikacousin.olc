@@ -219,7 +219,7 @@
         {
           "type": "git",
           "url": "https://github.com/mikacousin/olc.git",
-          "tag": "0.8.1.beta"
+          "tag": "0.8.2.beta"
         }
       ]
     }
