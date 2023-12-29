@@ -212,6 +212,20 @@
       ]
     },
     {
+      "name": "python3-sacn",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"charset-normalizer\" --no-build-isolation"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/3e/86/8cda45eca9e44948d1cf0100bf4fb09413ba8ed7c69d4b05d9312a881db1/sacn-1.9.0-py3-none-any.whl",
+          "sha256": "17bd6b68474569c3088c6523ba71b7d28dfab389d2475c21dd9ac9b59a98f9f6"
+        }
+      ]
+    },
+    {
       "name": "olc",
       "builddir": true,
       "buildsystem": "meson",
@@ -219,7 +233,7 @@
         {
           "type": "git",
           "url": "https://github.com/mikacousin/olc.git",
-          "tag": "0.8.4.beta"
+          "tag": "0.8.5.beta"
         }
       ]
     }
