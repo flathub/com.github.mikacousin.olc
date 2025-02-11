@@ -45,8 +45,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/47/e8/05838061cbf5f6e6a7f2f29366bfdb6010b5dad04996936ca86a61042b65/pyliblo3-0.16.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-          "sha256": "9c2245f5839367a7111193abfc8ef4a2def133589c13a907eaf0c5f19447b221"
+          "url": "https://files.pythonhosted.org/packages/12/18/788fdfa78afc40306bb1ae86ef591c0db51ab2691cd31a5096401ed3bf2f/pyliblo3-0.16.3.tar.gz",
+          "sha256": "b5a43ec8857fefa4db9f007ace1c457479e2b8155ea13c614b2ec54d289ddca2"
         }
       ]
     },
