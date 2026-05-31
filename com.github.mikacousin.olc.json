@@ -21,36 +21,7 @@
     "strip": true
   },
   "modules": [
-    {
-      "name": "liblo",
-      "config-opts": [
-        "--disable-examples",
-        "--disable-tools"
-      ],
-      "sources": [
-        {
-          "type": "git",
-          "url": "https://github.com/radarsat1/liblo.git",
-          "tag": "0.35",
-          "commit": "1d3cd7c8c76e6b25ee5ff35ad1356c2c8d25ac05"
-        }
-      ]
-    },
-    {
-      "name": "python3-pyliblo3",
-      "buildsystem": "simple",
-      "build-commands": [
-        "python3 -c \"import re; p='pyliblo3/_liblo.pyx'; c=open(p).read().replace('long(value)', 'int(value)').replace('(int, long)', 'int').replace('(float, int, long)', '(float, int)'); open(p,'w').write(c)\"",
-        "pip3 install --verbose --no-index --prefix=${FLATPAK_DEST} . --no-build-isolation"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://files.pythonhosted.org/packages/12/18/788fdfa78afc40306bb1ae86ef591c0db51ab2691cd31a5096401ed3bf2f/pyliblo3-0.16.3.tar.gz",
-          "sha256": "b5a43ec8857fefa4db9f007ace1c457479e2b8155ea13c614b2ec54d289ddca2"
-        }
-      ]
-    },
+
     {
       "name": "RtMidi",
       "config-opts": [
@@ -183,6 +154,20 @@
           "type": "file",
           "url": "https://files.pythonhosted.org/packages/9c/1f/19ebc343cc71a7ffa78f17018535adc5cbdd87afb31d7c34874680148b32/ifaddr-0.2.0-py3-none-any.whl",
           "sha256": "085e0305cfe6f16ab12d72e2024030f5d52674afad6911bb1eee207177b8a748"
+        }
+      ]
+    },
+    {
+      "name": "python3-pyserial",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyserial\" --no-build-isolation"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/07/bc/587a445451b253b285629263eb51c2d8e9bcea4fc97826266d186f96f558/pyserial-3.5-py2.py3-none-any.whl",
+          "sha256": "c4451db6ba391ca6ca299fb3ec7bae67a5c55dde170964c7a14ceefec02f2cf0"
         }
       ]
     },
@@ -359,7 +344,7 @@
         {
           "type": "git",
           "url": "https://github.com/mikacousin/olc.git",
-          "commit": "e5e8987ef3905c333b26a8ab74d2b43916fee025"
+          "commit": "f759a7b128892e551efffe61350aba3ca7391aab"
         }
       ]
     }
